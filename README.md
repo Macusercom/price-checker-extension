@@ -1,5 +1,5 @@
 # Alpenaufschlag: A price checker for Google Chrome
-A simple chrome extension to compare web shop prices between Austria and Germany.
+A simple chrome extension to compare web shop prices between Austria and Germany, currently supporting DM and IKEA.
 
 ## How To Install (Chrome)
 
@@ -23,3 +23,7 @@ The folder must remain, once it is deleted, the extension will not work anymore.
 ![Screenshot](images/image1.jpeg)
 
 ![Screenshot](images/image2.jpeg)
+
+## Credits
+Original project made by gomadoge (https://github.com/gomadoge/price-checker-extension)
+Project was made using Claude AI. Icon created by ChatGPT.
