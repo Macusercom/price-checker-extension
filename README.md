@@ -1,4 +1,4 @@
-# Price Checker for Google Chrome
+# Alpenaufschlag: A price checker for Google Chrome
 A simple chrome extension to compare web shop prices between Austria and Germany.
 
 ## How To Install (Chrome)
