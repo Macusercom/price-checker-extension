@@ -3,10 +3,7 @@ const OTHER_COUNTRY = LOCAL_COUNTRY === 'at' ? 'de' : 'at';
 const FLAGS = { at: '🇦🇹', de: '🇩🇪' };
 
 function getPriceElement() {
-  // The DM price DOM is deeply nested; XPath is the most reliable selector available.
-  const xpath = "//div[1]/div/main/div[2]/div[1]/div[2]/div[1]/div[*]/div[1]/div[1]/div/div[2]/div/div[1]/span/span";
-  const snapshot = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
-  return snapshot.snapshotLength > 0 ? snapshot.snapshotItem(0) : null;
+  return document.querySelector('[data-dmid="price-localized"]') ?? null;
 }
 
 function getGtin() {
@@ -32,7 +29,9 @@ async function refreshPrice() {
   const gtin = getGtin();
   if (!gtin) return;
 
-  const localPrice = priceElement.innerText.trim();
+  const localPriceMatch = /\d+(?:[,\.]\d+)?/.exec(priceElement.innerText);
+  if (!localPriceMatch) return;
+  const localPrice = localPriceMatch[0];
   const otherPrice = await fetchPrice(gtin, OTHER_COUNTRY);
 
   const prices = [
