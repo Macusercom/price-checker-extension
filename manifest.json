@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Price Checker",
+  "name": "Alpenaufschlag",
   "version": "1.1",
   "description": "Compare prices from web shops between Austria, Germany and Slovakia.",
   "content_scripts": [
