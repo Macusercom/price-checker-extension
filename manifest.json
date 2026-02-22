@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Price Checker",
+  "version": "1.1",
+  "description": "Compare prices from web shops between Austria, Germany and Slovakia.",
+  "content_scripts": [
+    {
+      "js": ["scripts/content/dm/content.js"],
+      "matches": ["https://www.dm.at/*", "https://www.dm.de/*"]
+    },
+    {
+      "js": ["scripts/content/ikea/content.js"],
+      "matches": [
+        "https://www.ikea.com/at/de/*",
+        "https://www.ikea.com/de/de/*",
+        "https://www.ikea.com/sk/sk/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "host_permissions": [
+    "https://products.dm.de/product/*",
+    "https://www.ikea.com/at/de/*",
+    "https://www.ikea.com/de/de/*",
+    "https://www.ikea.com/sk/sk/*"
+  ]
+}
