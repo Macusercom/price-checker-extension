@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
 
     fetch(url)
       .then(response => response.json())
-      .then(json => sendResponse({ found: true, price: json[0].price }))
+      .then(json => sendResponse(json?.length > 0 ? { found: true, price: json[0].price } : { found: false }))
       .catch(_ => sendResponse({ found: false }));
 
     return true;

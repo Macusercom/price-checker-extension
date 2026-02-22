@@ -1,15 +1,20 @@
 {
   "manifest_version": 3,
   "name": "Alpenaufschlag",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Compare prices from web shops between Austria, Germany and Slovakia.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
-      "js": ["scripts/content/dm/content.js"],
+      "js": ["scripts/content/shared.js", "scripts/content/dm/content.js"],
       "matches": ["https://www.dm.at/*", "https://www.dm.de/*"]
     },
     {
-      "js": ["scripts/content/ikea/content.js"],
+      "js": ["scripts/content/shared.js", "scripts/content/ikea/content.js"],
       "matches": [
         "https://www.ikea.com/at/de/*",
         "https://www.ikea.com/de/de/*",
