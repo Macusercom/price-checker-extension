@@ -19,7 +19,7 @@ A simple chrome extension to compare web shop prices between Austria and Germany
 Go back to `chrome://extensions` and click **Reload** on the extension card.
 The folder must remain, once it is deleted, the extension will not work anymore.
 
-## Bilder
+## Images
 ![Screenshot](images/image1.jpeg)
 
 ![Screenshot](images/image2.jpeg)
